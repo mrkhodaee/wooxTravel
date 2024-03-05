@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name') }} - @yield('pageTitle')</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -42,15 +42,15 @@
                               <!-- ***** Logo End ***** -->
                               <!-- ***** Menu Start ***** -->
                               <ul class="nav">
-                                  <li><a href="index-2.html" class="active">Home</a></li>
-                                  <li><a href="about.html">About</a></li>
-                                  <li><a href="deals.html">Deals</a></li>
+                                  <li><a href="index-2.html" class="active">خانه</a></li>
+                                  <li><a href="about.html">درباره</a></li>
+                                  <li><a href="deals.html">معاملات</a></li>
                                   @guest
                                       
                                   @if (Route::has('login'))
-                                  <li><a href="reservation.html">Login</a></li>
+                                  <li><a href="reservation.html">ورود</a></li>
                                   @elseif (Route::has('register'))
-                                  <li><a href="reservation.html">Register</a></li>
+                                  <li><a href="reservation.html">ثبت نام</a></li>
                                   @endif
                                   @endguest
                                   @if(Auth::user())

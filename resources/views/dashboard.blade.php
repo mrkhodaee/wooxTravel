@@ -1,3 +1,5 @@
+@section('pageTitle' , 'داشبورد')
+    
 <x-app-layout>
      <!-- ***** Main Banner Area Start ***** -->
   <section id="section-1">
