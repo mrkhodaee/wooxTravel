@@ -14,9 +14,9 @@
         <div id="top-banner-{{ $country->id }}" class="banner" style="background-image: url('{{ asset('assets/images/'.$country->image.'') }}');">
           <div class="banner-inner-wrapper header-text">
             <div class="main-caption">
-              <h2>Take a Glimpse Into The Beautiful Country Of:</h2>
+              <h2 class=" bg-primary w-50 m-auto rounded-5 p-2 bg-opacity-50">:نگاهی اجمالی به کشور زیبای آن بیندازید</h2>
               <h1>{{ $country->name }}</h1>
-              <div class="border-button"><a href="{{ route('traveling.about' , $country->id) }}">Go There</a></div>
+              <div class="border-button"><a href="{{ route('traveling.about' , $country->id) }}">برو اونجا</a></div>
             </div>
             <div class="container">
               <div class="row">
@@ -25,7 +25,7 @@
                     <div class="row">
                       <div class="col-lg-3 col-sm-6 col-6">
                         <i class="fa fa-user"></i>
-                        <h4><span>Population:</span><br>{{ $country->population }} M</h4>
+                        <h4><span>جمعیت:</span><br>{{ $country->population }} M</h4>
                       </div>
                       <div class="col-lg-3 col-sm-6 col-6">
                         <i class="fa fa-globe"></i>
@@ -37,7 +37,7 @@
                       </div>
                       <div class="col-lg-3 col-sm-6 col-6">
                         <div class="main-button">
-                          <a href="{{ route('traveling.about' , $country->id) }}">Explore More</a>
+                          <a href="{{ route('traveling.about' , $country->id) }}">بیشتر</a>
                         </div>
                       </div>
                     </div>
@@ -66,7 +66,7 @@
       <div class="row">
         <div class="col-lg-5">
           <div class="section-heading">
-            <h2>Visit One Of Our Countries Now</h2>
+            <h2>اکنون از یکی از کشورهای ما دیدن کنید</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
           </div>
         </div>
@@ -90,16 +90,16 @@
                         <h4>{{ Str::upper($country->name)}}</h4>
                         <span>{{ $country->continent }}</span>
                         <div class="main-button">
-                          <a href="{{ route('traveling.about' , $country->id) }}">Explore More</a>
+                          <a href="{{ route('traveling.about' , $country->id) }}">بیشتر</a>
                         </div>
                         <p>{{ $country->description }}</p>
                         <ul class="info">
-                          <li><i class="fa fa-user"></i> {{ $country->population }} Mil People</li>
+                          <li><i class="fa fa-user"></i> {{ $country->population }} Mil مردم</li>
                           <li><i class="fa fa-globe"></i> {{ $country->territory }} km2</li>
                           <li><i class="fa fa-home"></i> ${{ $country->avg_price }}</li>
                         </ul>
                         <div class="text-button">
-                          <a href="about.html">Need Directions ? <i class="fa fa-arrow-right"></i></a>
+                          <a href="about.html">به دستورالعمل نیاز دارید؟ <i class="fa fa-arrow-right"></i></a>
                         </div>
                       </div>
                     </div>

@@ -37,7 +37,7 @@
             <nav class="main-nav">
               <!-- ***** Logo Start ***** -->
               <a href="{{ route('dashboard') }}" class="logo">
-                <img src="assets/images/logo.png" alt="">
+                <img src="{{ asset('assets/images/logo.png') }}" alt="">
               </a>
               <!-- ***** Logo End ***** -->
               <!-- ***** Menu Start ***** -->
@@ -45,15 +45,15 @@
                 @php
                 $currentUrl = Request::url();
                 @endphp
-                <li><a href="/dashboard" class="{{ $currentUrl === 'http://127.0.0.1:8000/dashboard'? 'active': '' }}">خانه</a></li>
+                <li><a href="{{ route('dashboard') }}" class="{{ $currentUrl === 'http://127.0.0.1:8000/dashboard'? 'active': '' }}">خانه</a></li>
                 <li><a href="/traveling/about/sbx">درباره</a></li>
                 <li><a href="deals.html">معاملات</a></li>
                 @guest
 
                 @if (Route::has('login'))
-                <li><a href="reservation.html">ورود</a></li>
+                <li><a href="{{ route('dashboard') }}">ورود</a></li>
                 @elseif (Route::has('register'))
-                <li><a href="reservation.html">ثبت نام</a></li>
+                <li><a href="{{ route('dashboard') }}">ثبت نام</a></li>
                 @endif
                 @endguest
                 @if(Auth::user())
