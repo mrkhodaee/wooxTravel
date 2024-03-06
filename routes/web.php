@@ -3,6 +3,7 @@
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReservationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,8 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [DashboardController::class , 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/traveling/about/{id}', [CityController::class , 'about'])->name('traveling.about');
+Route::get('/traveling/reservation/{id}', [ReservationController::class , 'makeReservation'])->name('traveling.reservation');
+Route::post('/traveling/reservation/{id}', [ReservationController::class , 'storeReservation'])->name('traveling.reservation.store');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

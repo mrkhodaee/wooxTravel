@@ -1,4 +1,4 @@
-@section('pageTitle' , 'داشبورد')
+@section('pageTitle' , 'سفر '.$country->name)
 
 <x-app-layout>
 
@@ -82,7 +82,7 @@
                     <li><i class="fa fa-building"></i> Daily Places Visit</li>
                   </ul>
                   <div class="main-button">
-                    <a href="reservation.html">Make a Reservation</a>
+                    <a href="{{ route('traveling.reservation', $city->id) }}">رزرو</a>
                   </div>
                 </div>
               </div>
