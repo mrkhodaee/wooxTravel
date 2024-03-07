@@ -30,7 +30,8 @@ Route::get('/traveling/reservation/{id}', [ReservationController::class , 'makeR
 Route::post('/traveling/reservation/{id}', [ReservationController::class , 'storeReservation'])->name('traveling.reservation.store');
 
 // deals
-Route::get('/traveling/deals/{id}', [DealsController::class , 'deals'])->name('traveling.deals');
+Route::get('/traveling/deals', [DealsController::class , 'deals'])->name('traveling.deals');
+Route::any('/traveling/search-deals', [DealsController::class , 'searchDeals'])->name('traveling.deals.search');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

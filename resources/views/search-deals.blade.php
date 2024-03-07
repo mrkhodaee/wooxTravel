@@ -1,19 +1,8 @@
 @section('pageTitle' , 'معاملات')
     
 <x-app-layout>
-    <div class="page-heading">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <h4>Discover Our Weekly Offers</h4>
-              <h2>Amazing Prices &amp; More</h2>
-              <div class="border-button"><a href="about.html">Discover More</a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="search-form">
+     
+      <div class="search-form" style="margin-top: 71px;">
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
@@ -46,7 +35,7 @@
                   </div>
                   <div class="col-lg-3">                        
                       <fieldset>
-                          <button class="border-button" wire:navigate>سرچ</button>
+                          <button class="border-button">سرچ</button>
                       </fieldset>
                   </div>
                 </div>
@@ -61,11 +50,13 @@
           <div class="row">
             <div class="col-lg-6 offset-lg-3">
               <div class="section-heading text-center">
-                <h2>Best Weekly Offers In Each City</h2>
+                <h2>بهترین پیشنهادات هفتگی در هر شهر</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
               </div>
             </div>
-            @foreach ($cities as $city)
+            @if (count($searches))
+            @foreach ($searches as $city)
+                    
                 
             <div class="col-lg-6 col-sm-6">
               <div class="item">
@@ -99,7 +90,9 @@
               </div>
             </div>
             @endforeach
-
+            @else
+                  <p class=" alert alert-success text-center"><-- Nothing found --></p>  
+            @endif
            
 
             <div class="col-lg-12">
