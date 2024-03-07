@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DealsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,9 @@ Route::post('/traveling/reservation/{id}', [ReservationController::class , 'stor
 // deals
 Route::get('/traveling/deals', [DealsController::class , 'deals'])->name('traveling.deals');
 Route::any('/traveling/search-deals', [DealsController::class , 'searchDeals'])->name('traveling.deals.search');
+
+// users page
+Route::any('/users/my-bookings', [UsersController::class , 'users'])->name('users-bookings');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
