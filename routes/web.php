@@ -24,15 +24,19 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', [DashboardController::class , 'index'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/traveling/about/{id}', [CityController::class , 'about'])->name('traveling.about');
 
-// reservation
-Route::get('/traveling/reservation/{id}', [ReservationController::class , 'makeReservation'])->name('traveling.reservation');
-Route::post('/traveling/reservation/{id}', [ReservationController::class , 'storeReservation'])->name('traveling.reservation.store');
+Route::group(['prefix' => 'traveling'], function(){
 
-// deals
-Route::get('/traveling/deals', [DealsController::class , 'deals'])->name('traveling.deals');
-Route::any('/traveling/search-deals', [DealsController::class , 'searchDeals'])->name('traveling.deals.search');
+    Route::get('/about/{id}', [CityController::class , 'about'])->name('traveling.about');
+    
+    // reservation
+    Route::get('/reservation/{id}', [ReservationController::class , 'makeReservation'])->name('traveling.reservation');
+    Route::post('/reservation/{id}', [ReservationController::class , 'storeReservation'])->name('traveling.reservation.store');
+    
+    // deals
+    Route::get('/deals', [DealsController::class , 'deals'])->name('traveling.deals');
+    Route::any('/search-deals', [DealsController::class , 'searchDeals'])->name('traveling.deals.search');
+});
 
 // users page
 Route::any('/users/my-bookings', [UsersController::class , 'users'])->name('users-bookings');

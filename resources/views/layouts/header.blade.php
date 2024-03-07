@@ -15,7 +15,7 @@
               @endphp
               <li><a href="{{ route('dashboard') }}" class="{{ $currentUrl === 'http://127.0.0.1:8000/dashboard'? 'active': '' }}">خانه</a></li>
               <li><a href="{{ route('dashboard') }}">درباره</a></li>
-              <li><a href="deals.html">معاملات</a></li>
+              <li><a href="{{ route('traveling.deals') }}" class="{{ $currentUrl === 'http://127.0.0.1:8000/traveling/deals'? 'active': '' }}">معاملات</a></li>
               @guest
 
               @if (Route::has('login'))
