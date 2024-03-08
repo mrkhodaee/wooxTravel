@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminsController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DealsController;
@@ -40,6 +41,9 @@ Route::group(['prefix' => 'traveling'], function(){
 
 // users page
 Route::any('/users/my-bookings', [UsersController::class , 'users'])->name('users-bookings');
+
+// admin page
+Route::any('/admin/login', [AdminsController::class , 'viewLogin'])->name('view.login');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
